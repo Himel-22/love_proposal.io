@@ -1,0 +1,445 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Someone Special ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#090909;
+    color:white;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8));
+    z-index:-1;
+}
+
+.hero{
+    height:100vh;
+    background:url('655441983_824785457325120_7384880056531773544_n.jpg') center/cover no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+}
+
+.hero::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:5rem;
+    font-family:'Great Vibes',cursive;
+    color:#ffd6e7;
+    text-shadow:0 0 25px rgba(255,255,255,0.4);
+    animation:fadeUp 2s ease;
+}
+
+.hero p{
+    margin-top:20px;
+    font-size:1.2rem;
+    max-width:700px;
+    line-height:1.8;
+    color:#f5f5f5;
+    animation:fadeUp 3s ease;
+}
+
+.scroll-btn{
+    display:inline-block;
+    margin-top:35px;
+    padding:15px 35px;
+    border-radius:50px;
+    text-decoration:none;
+    color:white;
+    background:linear-gradient(45deg,#ff4d88,#ff80ab);
+    font-weight:600;
+    transition:0.4s;
+    box-shadow:0 0 25px rgba(255,77,136,0.4);
+}
+
+.scroll-btn:hover{
+    transform:translateY(-5px) scale(1.05);
+}
+
+.section{
+    padding:100px 8%;
+}
+
+.title{
+    text-align:center;
+    font-size:3.5rem;
+    margin-bottom:60px;
+    color:#ffd6e7;
+    font-family:'Great Vibes',cursive;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+.card{
+    position:relative;
+    overflow:hidden;
+    border-radius:25px;
+    background:#111;
+    transition:0.5s;
+    box-shadow:0 10px 35px rgba(0,0,0,0.4);
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.02);
+}
+
+.card img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+    transition:0.6s;
+}
+
+.card:hover img{
+    transform:scale(1.08);
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top,rgba(0,0,0,0.8),transparent);
+    display:flex;
+    align-items:flex-end;
+    padding:25px;
+}
+
+.overlay h3{
+    font-size:1.2rem;
+    color:#fff;
+}
+
+.love-letter{
+    max-width:900px;
+    margin:auto;
+    background:rgba(255,255,255,0.06);
+    padding:50px;
+    border-radius:30px;
+    line-height:2;
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.08);
+    box-shadow:0 0 35px rgba(255,255,255,0.05);
+}
+
+.love-letter p{
+    font-size:1.1rem;
+    color:#f0f0f0;
+}
+
+.quote{
+    margin-top:25px;
+    font-size:2.3rem;
+    color:#ffd6e7;
+    text-align:center;
+    font-family:'Great Vibes',cursive;
+}
+
+.final{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(135deg,#12040c,#2b0d18,#12040c);
+    position:relative;
+    overflow:hidden;
+}
+
+.final::before,
+.final::after{
+    content:'❤';
+    position:absolute;
+    color:rgba(255,255,255,0.08);
+    font-size:12rem;
+    animation:float 8s infinite ease-in-out;
+}
+
+.final::before{
+    left:10%;
+    top:20%;
+}
+
+.final::after{
+    right:10%;
+    bottom:15%;
+    animation-delay:2s;
+}
+
+.final-box h2{
+    font-size:5rem;
+    font-family:'Great Vibes',cursive;
+    color:#ffd6e7;
+}
+
+.final-box p{
+    margin-top:20px;
+    font-size:1.3rem;
+    color:#f2f2f2;
+}
+
+.buttons{
+    margin-top:40px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    font-size:1rem;
+    cursor:pointer;
+    transition:0.4s;
+    font-weight:600;
+}
+
+.yes{
+    background:linear-gradient(45deg,#ff4d88,#ff80ab);
+    color:white;
+    box-shadow:0 0 25px rgba(255,77,136,0.4);
+}
+
+.no{
+    background:white;
+    color:#111;
+}
+
+.btn:hover{
+    transform:scale(1.08);
+}
+
+.footer{
+    text-align:center;
+    padding:25px;
+    background:#050505;
+    color:#999;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-25px);
+    }
+}
+
+@media(max-width:768px){
+    .hero h1{
+        font-size:3.5rem;
+    }
+
+    .title{
+        font-size:2.8rem;
+    }
+
+    .final-box h2{
+        font-size:3.5rem;
+    }
+
+    .love-letter{
+        padding:30px;
+    }
+}
+\.popup{\n    position:fixed;\n    inset:0;\n    background:rgba\(0,0,0,0\.92\);\n    display:none;\n    justify-content:center;\n    align-items:center;\n    z-index:9999;\n    padding:20px;\n}\n\n.popup-content{\n    max-width:900px;\n    width:100%;\n    background:#111;\n    border-radius:30px;\n    overflow:hidden;\n    position:relative;\n    animation:popup 0.5s ease;\n    box-shadow:0 0 40px rgba\(255,255,255,0\.12\);\n}\n\n.popup-content img{\n    width:100%;\n    max-height:70vh;\n    object-fit:cover;\n}\n\n.popup-text{\n    padding:35px;\n    text-align:center;\n}\n\n.popup-text h3{\n    font-size:2rem;\n    margin-bottom:15px;\n    color:#ffd6e7;\n    font-family:'Great Vibes',cursive;\n}\n\n.popup-text p{\n    line-height:1.8;\n    color:#f1f1f1;\n}\n\n.close{\n    position:absolute;\n    top:15px;\n    right:20px;\n    font-size:2rem;\n    cursor:pointer;\n    color:white;\n    z-index:10;\n}\n\n@keyframes popup{\n    from{\n        opacity:0;\n        transform:scale\(0\.8\);\n    }\n    to{\n        opacity:1;\n        transform:scale\(1\);\n    }\n}\n\n</style>
+</head>
+<body>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>For You ❤️</h1>
+        <p>
+            I don't know what destiny has written for us...
+            but I know one thing — meeting you became one of the
+            most beautiful parts of my life.
+        </p>
+
+        <a href="#memories" class="scroll-btn">See Something Beautiful</a>
+    </div>
+</section>
+
+<section class="section" id="memories">
+    <h2 class="title">Moments I Admire</h2>
+
+    <div class="gallery">
+
+        <div class="card" onclick="openPopup('655441983_824785457325120_7384880056531773544_n.jpg','Your smile feels peaceful.','Every time I look at this picture, the world becomes softer and calmer. Your smile has a strange magic that stays in my mind for hours.')">\n            <img src="655441983_824785457325120_7384880056531773544_n.jpg">
+            <div class="overlay">
+                <h3>Your smile feels peaceful.</h3>
+            </div>
+        </div>
+
+        <div class="card" onclick="openPopup('656019509_824785397325126_8132591891644470675_n.jpg','Those eyes are dangerously beautiful.','There is something in your eyes that makes me forget every other thing around me. They speak more beautifully than words ever could.')">\n            <img src="656019509_824785397325126_8132591891644470675_n.jpg">
+            <div class="overlay">
+                <h3>Those eyes are dangerously beautiful.</h3>
+            </div>
+        </div>
+
+        <div class="card" onclick="openPopup('655527515_824785340658465_8965961179508481738_n.jpg','You look like poetry.','Some people are beautiful. Some people are art. But you feel like poetry written by the universe itself.')">\n            <img src="655527515_824785340658465_8965961179508481738_n.jpg">
+            <div class="overlay">
+                <h3>You look like poetry.</h3>
+            </div>
+        </div>
+
+        <div class="card" onclick="openPopup('655501687_824785293991803_5124566548745215008_n.jpg','I can look at you forever.','If admiring you was a profession, I would probably become the most dedicated person alive.')">\n            <img src="655501687_824785293991803_5124566548745215008_n.jpg">
+            <div class="overlay">
+                <h3>I can look at you forever.</h3>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="655284867_824785203991812_1218502458919309936_n.jpg">
+            <div class="overlay">
+                <h3>Your simplicity is beautiful.</h3>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="655216956_824785130658486_6064695426761981081_n.jpg">
+            <div class="overlay">
+                <h3>Every picture tells a story.</h3>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="655649484_824785053991827_312711203518698218_n.jpg">
+            <div class="overlay">
+                <h3>You are effortlessly beautiful.</h3>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="621738298_779331088537224_9052124843234061537_n.jpg">
+            <div class="overlay">
+                <h3>Black and white, still magical.</h3>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="620103110_779330865203913_1182740429153057348_n.jpg">
+            <div class="overlay">
+                <h3>Your smile is unforgettable.</h3>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="616316188_772179955919004_294700268241842695_n.jpg">
+            <div class="overlay">
+                <h3>You make ordinary moments beautiful.</h3>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="616215989_772179882585678_846600817691813139_n.jpg">
+            <div class="overlay">
+                <h3>That look stole my heart.</h3>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="616199669_772179799252353_670106029750658045_n.jpg">
+            <div class="overlay">
+                <h3>You are my favorite feeling.</h3>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <h2 class="title">A Small Confession</h2>
+
+    <div class="love-letter">
+        <p>
+            I made this website because words were never enough.
+            Every time I talk to you, see you, or even think about you,
+            something inside me feels calm and happy.
+            
+            Maybe you don't know this yet...
+            but slowly, quietly, you became someone incredibly special to me.
+            
+            I don't promise perfection.
+            I just promise honesty, care, respect, and genuine love.
+            
+            No matter what your answer is,
+            I will always be grateful that you exist in my life.
+        </p>
+
+        <div class="quote">
+            “And somewhere between all those moments…
+            I fell for you.”
+        </div>
+    </div>
+</section>
+
+<section class="final">
+    <div class="final-box">
+        <h2>Will You Be Mine?</h2>
+
+        <p>
+            I don't know what the future holds...
+            but I know I would love to walk toward it with you.
+        </p>
+
+        <div class="buttons">
+            <button class="btn yes">YES ❤️</button>
+            <button class="btn no">Need Some Time</button>
+        </div>
+    </div>
+</section>
+
+<div class="popup" id="popup">\n    <div class="popup-content">\n        <span class="close" onclick="closePopup()">&times;</span>\n        <img id="popup-img" src="">\n\n        <div class="popup-text">\n            <h3 id="popup-title"></h3>\n            <p id="popup-desc"></p>\n        </div>\n    </div>\n</div>\n\n<script>\nfunction openPopup(image,title,desc){\n    document.getElementById('popup').style.display='flex';\n    document.getElementById('popup-img').src=image;\n    document.getElementById('popup-title').innerText=title;\n    document.getElementById('popup-desc').innerText=desc;\n}\n\nfunction closePopup(){\n    document.getElementById('popup').style.display='none';\n}\n\nwindow.onclick=function(e){\n    const popup=document.getElementById('popup');\n    if(e.target===popup){\n        popup.style.display='none';\n    }\n}\n</script>\n\n<div class="footer">
+    Made with love ❤️
+</div>
+
+</body>
+</html>
+
